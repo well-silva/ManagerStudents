@@ -1,0 +1,66 @@
+{
+  "students": [
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Jessica Oliveira",
+      "email": "mail@webmail.com",
+      "birth": 968889600000,
+      "yearSchool": "1M-",
+      "classTime": "500"
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://images.unsplash.com/photo-1557555187-23d685287bc3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Marina Camila",
+      "email": "mail@webmail.com",
+      "birth": 910742400000,
+      "yearSchool": "2M",
+      "classTime": "200"
+    },
+    {
+      "id": 5,
+      "avatar_url": "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Fabiana Silva",
+      "email": "mail@webmail.com",
+      "birth": 660096000000,
+      "yearSchool": "3M",
+      "classTime": "2000"
+    },
+    {
+      "id": 6,
+      "avatar_url": "https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "name": "Camila Rulfino",
+      "email": "mail@webmail.com",
+      "birth": 987292800000,
+      "yearSchool": "1M-",
+      "classTime": "400"
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Manuela Carvalho",
+      "avatar_url": "https://images.unsplash.com/photo-1484588168347-9d835bb09939?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "birth": 536544000000,
+      "tipoDeAula": "presencial",
+      "services": "Literatura,Portugues,Ingles"
+    },
+    {
+      "id": 2,
+      "name": "Amanda Rodrigues",
+      "avatar_url": "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHdvbWFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "birth": 518400000000,
+      "tipoDeAula": "presencial",
+      "services": "Química,Fisica, Lógica"
+    },
+    {
+      "id": 3,
+      "name": "Manuel Chagas",
+      "avatar_url": "https://images.unsplash.com/photo-1548449112-96a38a643324?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dGVhY2hlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "birth": 282009600000,
+      "tipoDeAula": "presencial",
+      "services": "Quimica,Fisica,Biologia,Matematica"
+    }
+  ]
+}
