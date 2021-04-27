@@ -49,6 +49,7 @@ exports.post = (req, res) => {
     let { avatar_url, name, birth, grauEscolaridade, tipoDeAula, services } = req.body
 
     birth = Date.parse(birth)
+    
     const lastTeacher = data.teachers.length
     let id = 1
     if (lastTeacher){
