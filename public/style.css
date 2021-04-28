@@ -68,7 +68,7 @@ header{
     min-height: 400px;
     background: white;
     margin: 45px auto;
-
+    
     display: grid;
     grid-template-columns: 40% 60%;
 

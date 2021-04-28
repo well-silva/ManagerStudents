@@ -15,7 +15,7 @@ module.exports = {
         return age;
     },
     graduation: (graduation) => {
-        if (graduation == 'media'){
+        if (graduation == 'medio'){
             return 'Ensino Médio Complemto'
         }else if(graduation == 'superior'){
             return 'Ensino Superior Completo'
@@ -35,6 +35,7 @@ module.exports = {
         return {
             iso: `${year}-${month}-${day}`,
             birthday: `${day}/${month}`,
+            format: `${day}/${month}/${year}`,
             day,
             month,
             year

@@ -1,13 +1,25 @@
+const Student = require('../model/Student')
 const { age, graduation, date, grade } = require('../../lib/utils')
 
 const controller = {
     index: (req, res) => {
 
-        return res.render('students/index')
+        Student.all((students) => {
+
+            return res.render('students/index', { students })
+        })
+
     },
     show: (req, res) => {
         
-        return 
+        Student.find(req.params.id, (student) => {
+            if(!student) return res.send('Students not found')
+
+            student.age = date(student.birth_date).birthday
+            student.education_level = grade(student.education_level)
+
+            return res.render('students/show', { student })
+        })
     },
     post: (req, res) => {
 
@@ -18,22 +30,25 @@ const controller = {
                 return res.send("Preencha todos os campos")
             }
         }
-    
-        let { avatar_url, 
-            name, 
-            email,
-            birth,
-            yearSchool,
-            classTime
-        } = req.body
-    
-        return
+        
+        Student.create(req.body, (student) => {
+
+            return res.redirect(`/students/${ student.id }`)
+
+        })
+
     },
     create: (req, res) => {
         return res.render('students/create')
     },
     edit: (req, res) => {
-        return
+        Student.find(req.params.id, (student) => {
+            if(!student) return res.send('Student not found')
+
+            student.birth_date = date(student.birth_date).iso
+
+            return res.render('students/edit', { student })
+        })
     },
     update: (req, res) => {
         const keys = Object.keys(req.body)
@@ -43,9 +58,15 @@ const controller = {
                 return res.send("Preencha todos os campos")
             }
         }
+
+        Student.update(req.body, () => {
+            return res.redirect(`students/${req.body.id}`)
+        })
     },
     delete: (req, res) => {
-        return
+        Student.delete(req.body.id, () => {
+            return res.redirect('/students')
+        })
     }
 }
 
