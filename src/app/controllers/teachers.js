@@ -4,9 +4,19 @@ const { age, graduation, date } = require('../../lib/utils')
 const controller = {
     index: (req, res) => {
 
-        Teacher.all((teachers) => {
-            return res.render('teachers/index', { teachers })
-        })
+        const { filter } = req.query
+
+        if(filter) {
+            Teacher.findBy(filter, (teachers) => {
+                return res.render('teachers/index', { teachers, filter })
+            })
+        } else {
+            Teacher.all((teachers) => {
+                return res.render('teachers/index', { teachers })
+            })
+        }
+
+        
 
     },
     show: (req, res) => {

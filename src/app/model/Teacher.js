@@ -62,6 +62,23 @@ module.exports = {
       callback(results.rows[0])
     })
   },
+  findBy(filter, callback) {
+    const query = `
+    SELECT teachers.*, COUNT(students) AS total_students
+    FROM teachers
+    LEFT JOIN students on (students.teacher_id = teachers.id)
+    WHERE teachers.name ILIKE '%${filter}%'
+    OR teachers.subjects_taught ILIKE '%${filter}%' 
+    GROUP BY teachers.id
+    ORDER BY total_students DESC
+`
+      
+  db.query(query, (err, results) => {
+      if(err) throw `Database Error ${err}`
+      
+      callback(results.rows)
+  })
+  },
   update(data, callback) {
     const query = `
     UPDATE teachers SET
