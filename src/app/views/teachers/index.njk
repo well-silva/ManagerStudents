@@ -8,6 +8,7 @@
                 <tr>
                     <th>Teacher</th>
                     <th>Acompanhamento</th>
+                    <th>Alunos</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -21,11 +22,10 @@
                             {{teacher.name}}
                         </td>
                         <td>
-                                <span class="service">{{ teacher.subjects_taught }} </span>
+                            <span class="service">{{ teacher.subjects_taught }} </span>
                         </td>
-                        <td>
-                            <a href="/teachers/{{ teacher.id }}">ver</a>
-                        </td>
+                        <td>{{ teacher.total_students }}</td>
+                        <td><a href="/teachers/{{ teacher.id }}">ver</a></td>
                     </tr>
                 {% endfor %}
             </tbody>

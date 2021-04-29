@@ -5,7 +5,6 @@ const controller = {
     index: (req, res) => {
 
         Teacher.all((teachers) => {
-
             return res.render('teachers/index', { teachers })
         })
 

@@ -32,14 +32,14 @@ const controller = {
         }
         
         Student.create(req.body, (student) => {
-
             return res.redirect(`/students/${ student.id }`)
-
         })
 
     },
     create: (req, res) => {
-        return res.render('students/create')
+        Student.teachersSelectOptions((options) => {
+            return res.render('students/create', { teacherOptions: options })
+        })
     },
     edit: (req, res) => {
         Student.find(req.params.id, (student) => {
@@ -47,7 +47,9 @@ const controller = {
 
             student.birth_date = date(student.birth_date).iso
 
-            return res.render('students/edit', { student })
+            Student.teachersSelectOptions((options) => {
+                return res.render('students/edit', { student ,teacherOptions: options })
+            })
         })
     },
     update: (req, res) => {
