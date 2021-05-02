@@ -4,19 +4,28 @@ const { age, graduation, date } = require('../../lib/utils')
 const controller = {
     index: (req, res) => {
 
-        const { filter } = req.query
+        let { filter, page, limit } = req.query
 
-        if(filter) {
-            Teacher.findBy(filter, (teachers) => {
-                return res.render('teachers/index', { teachers, filter })
-            })
-        } else {
-            Teacher.all((teachers) => {
-                return res.render('teachers/index', { teachers })
-            })
+        page = page || 1
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter,
+            page,
+            limit,
+            offset,
+            callback(teachers){
+
+                const pagination = {
+                    total: Math.ceil(teachers[0].total / limit),
+                    page
+                }
+                    return res.render('teachers/index', { teachers, pagination, filter })
+            }
         }
+        Teacher.paginate(params)
 
-        
 
     },
     show: (req, res) => {

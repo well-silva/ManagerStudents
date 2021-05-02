@@ -297,3 +297,36 @@ td span{
 .table-container .header form button{
     margin: 0;
 }
+
+/* Pagination */
+
+.table-container {
+    display: grid;
+    grid-template: 64px 1fr 64px / 1fr;
+}
+
+.table-container .header{
+    margin: 0;
+    align-self: start;
+}
+
+.table-container .pagination {
+    margin: 0;
+    align-self: flex-end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span{
+    color: var(--primary-color);
+    margin-right: 16px;
+    background: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0;
+}
+
+.pagination a:hover{
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--primary-color) ;
+}
