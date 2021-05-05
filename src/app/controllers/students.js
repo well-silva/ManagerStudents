@@ -21,7 +21,10 @@ const controller = {
                     total: Math.ceil(students[0].total / limit),
                     page
                 }
+                    console.log(pagination.total)
                     return res.render('students/index', { students, pagination, filter })
+                    console.log(pagination.total)
+
             }
         }
         Student.paginate(params)
